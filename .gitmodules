@@ -1,0 +1,3 @@
+[submodule "themes/timar/images/icons-bootstrap"]
+	path = themes/timar/images/icons-bootstrap
+	url = https://github.com/twbs/icons/

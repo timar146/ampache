@@ -1,0 +1,496 @@
+/************************
+ * Colors
+ ************************/
+@blue-dark:#001B29;
+@blue-medium:#003049;
+@blue-light:#00507A;
+@blue-super-light:#0085CC;
+
+@red:#D62828;
+@orange:#F77F00;
+@orange-opacity:#F77F0080;
+@yellow:#FCBF49;
+@meringue:#EAE2B7;
+
+@black:#404041;
+
+@grey-dark:#6D6E70;
+@grey-medium:#B0B0B0;
+@grey-light:#C4C4C4;
+@grey-super-light:#E4E4E4;
+
+@white-medium:#F1F1F2;
+@white-light:#F7F8F8;
+@white:#FFFFFF;
+
+//@import "template.less";
+
+/***********************************************
+           General style rules
+***********************************************/
+
+body {
+  color: @black;
+  background-color: @white;
+}
+
+.error {
+  color: @red;
+}
+
+a {
+  color: @black;
+  & > svg,
+  & > img  {
+    color: @orange;
+  }
+  &:hover {
+    color: @blue-medium;
+    & > svg,
+    & > img {
+      color: color("@{orange}95");
+    }
+  }
+}
+
+hr {
+  border-top-color: red;
+}
+
+input[type="password"],
+input[type="text"],
+select {
+  border-color: @grey-dark;
+  background-color: @white;
+  color: @black;
+
+  &:hover,
+  &:focus {
+    border-color: @orange;
+  }
+}
+
+input[type="button"],
+input[type="submit"] {
+  color: @white;
+  background-color: @orange;
+  
+  &:hover,
+  &:focus {
+    //color: @grey-super-light;
+    background-color: color("@{orange}95");
+  }
+  &:focus:active {
+    //color: @grey-light;
+    background-color: color("@{orange}85");
+  }
+}
+
+input[type=checkbox] {
+  background: @white;
+  border-color: @grey-dark;
+
+  &:checked {
+    background: @white;
+    &:before {
+      color: @orange;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    border-color: @orange;
+  }
+}
+
+.edit_dialog_content input[type="text"],
+.edit_dialog_content select {
+  color: red;
+}
+
+.editdialogstyle.ui-dialog .ui-dialog-titlebar {
+  color: red;
+}
+
+.alert-danger {
+  color: @red;
+}
+div#autoupdate > span {
+  color: @red;
+}
+/***********************************************
+           Main
+***********************************************/
+#ajax-loading {
+  color: transparent;
+  background-image: url(../images/ajax-loader-light.gif);
+}
+
+/***********************************************
+           Header
+***********************************************/
+#header {
+  background-color: @yellow;
+}
+
+/***********************************************
+           Login
+***********************************************/
+#loginPage {
+  background-color: @white-light;
+}
+
+#loginPage #maincontainer,
+#registerPage #maincontainer {
+}
+
+#loginPage #headerlogo,
+#registerPage #headerlogo {
+  background-image: url("../images/ampache-light.png");
+}
+
+#loginPage #loginbox {
+  color: @black;
+}
+
+#loginPage #loginbox #remembermefield {
+}
+
+#loginPage span.error {
+  background: @yellow;
+  color: @grey-dark;
+}
+
+/***********************************************
+           Sidebar
+***********************************************/
+#sidebar {
+  color: @black;
+}
+
+#sidebar-header {
+  background-color: @grey-super-light;
+}
+
+#sidebar-header:hover {
+  color: @grey-dark;
+}
+
+#sidebar-content,
+#sidebar-content-light,
+#sidebar-light {
+  background-color: @grey-super-light;
+}
+
+/* Tabs content */
+#sidebar-page {
+  background-color: @grey-super-light;
+}
+
+#sidebar-tabs .sb2 li h4 {
+  color: #111;
+  background-color: #e3e3e3;
+  border-color: @grey-medium;
+}
+
+#sidebar-tabs .sb2 li ul li a,
+#sidebar-light a {
+  color: @black;
+}
+
+#sidebar-tabs .sb2 li ul li a:hover,
+ul#sidebar-light li:hover {
+  background-color: @white-light;
+}
+
+#sidebar-tabs .sb2 #browse_filters #multi_alpha_filter {
+  border-color: #bbb;
+}
+
+/***********************************************
+           Rightbar
+***********************************************/
+#rightbar {
+  border-color: @black;
+  background-color: @white;
+}
+
+/***********************************************
+           Content
+***********************************************/
+#content {
+  background-color: @white;
+  color: @black;
+
+  & > #guts > table.tabledata,
+  & > #guts > #browse_header > table.tabledata {
+    tr#browse_location {
+      background: transparent;
+      td {
+        border-color: @orange;
+        color: @orange;
+      }
+
+      a {
+        color: @white;
+        &:hover {
+          border-color: @orange;
+          color: @orange;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.list-header,
+.list-header a {
+  color: #000;
+}
+
+.list-header a:hover,
+.list-header a:focus {
+  color: #52aae4;
+}
+
+span.page-nb {
+  color: red;
+}
+
+#catalog_type_fields table.tabledata a {
+  color: red;
+}
+
+table.tabledata thead .th-top,
+table.tabledata tfoot .th-bottom {
+  background-color: @white;
+}
+
+table.tabledata:not(.disablegv) tbody tr:nth-child(odd) {
+  background-color: @white-light;
+  td[colspan] {
+    background-color: @white;
+  }
+}
+
+table.disablegv {
+  tr:hover {
+    background-color: @white-light; 
+  }
+}
+
+/***********************************************
+           Content (info-box)
+***********************************************/
+#content .missing {
+  background-image: url("../images/missing.png");
+}
+
+/***********************************************
+    Content (now playing)
+***********************************************/
+#now_playing .cel_albumart img {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+}
+
+#now_playing .cel_lyrics a:hover {
+  color: #0099cc;
+}
+
+/***********************************************
+    Content (Tag cloud)
+***********************************************/
+span.fatalerror {
+  color: #c60;
+}
+
+.box-content #tag_filter .tag_button {
+  color: #fff;
+}
+
+.box-content #tag_filter .tag_button span:hover {
+  background-color: #c85a00;
+  background-image: -moz-linear-gradient(top, #1473af, #027ecc);
+  background-image: -ms-linear-gradient(top, #1473af, #027ecc);
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(#1473af),
+    to(#027ecc)
+  );
+  background-image: -webkit-linear-gradient(top, #1473af, #027ecc);
+  background-image: -o-linear-gradient(top, #1473af, #027ecc);
+  background-image: linear-gradient(top, #1473af, #027ecc);
+}
+
+/***********************************************
+    Content (information-actions)
+***********************************************/
+.item_art .item_art_play .item_art_play_icon {
+  background-color: @yellow;
+  &:hover {
+    background-color: @orange;
+  }
+}
+
+.item_art .item_art_actions {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+
+.item_art {
+  border-color: @grey-dark;
+  background-color: inherit;
+  &:hover {
+    border-color: @orange;
+    img {
+      opacity: 0.7;
+    }
+  }
+}
+
+/************************************************/
+/*        Styles for user flags                 */
+/************************************************/
+.userflag a.userflag_true {
+  background: url(../../../images/icon_flag.png) left top;
+}
+
+.userflag a:hover.userflag_true {
+  background: url(../../../images/icon_flag_off.png) left top;
+}
+
+.userflag a.userflag_false {
+  background: url(../../../images/icon_flag_off.png) left top;
+}
+
+.userflag a:hover.userflag_false {
+  background: url(../../../images/icon_flag.png) left top;
+}
+
+/***********************************************
+        Content (Track view)
+***********************************************/
+dl.media_details dt {
+  color: #c60;
+}
+
+/***********************************************
+        Footer
+***********************************************/
+#footer a:hover {
+  color: #09c;
+}
+
+#ampache_link {
+  color: #000;
+}
+
+/***********************************************
+        Web Player
+***********************************************/
+a.jp-play, a.jp-play:hover, a.jp-pause, a.jp-pause:hover, a.jp-stop, a.jp-stop:hover, a.jp-previous, a.jp-previous:hover, a.jp-next, a.jp-next:hover, div.jp-seek-bar, div.jp-play-bar, a.jp-mute, a.jp-mute:hover, a.jp-unmute, a.jp-unmute:hover, a.jp-volume-max, a.jp-volume-max:hover, div.jp-volume-bar, div.jp-audio, div.jp-volume-bar, div.jp-volume-bar-value, a.jp-full-screen, a.jp-full-screen:hover, a.jp-restore-screen, a.jp-restore-screen:hover, a.jp-repeat, a.jp-repeat:hover, a.jp-repeat-off, a.jp-repeat-off:hover, a.jp-shuffle, a.jp-shuffle:hover, a.jp-shuffle-off, a.jp-shuffle-off:hover {
+  background-image: url("../images/jplayer.timar146-orange.png") !important;
+}
+
+div.jp-audio,
+div.jp-audio-stream,
+div.jp-video {
+  color: #000;
+  border: 1px solid @white-light;
+}
+
+div.jp-video div.jp-interface {
+  border-top: 1px solid @white-light;
+}
+
+div.jp-title,
+div.jp-playlist {
+  background-color: @grey-light;
+  border-top: 1px solid @white-light;
+}
+
+.jp-no-solution {
+  background-color: @grey-light;
+  background-image: none;
+  border-top: 1px solid @white-light;
+}
+
+#webplayer {
+  background-color: @white-light !important;
+}
+
+div.playing_title a {
+  color: @black;
+}
+
+div.playing_artist a {
+  color: @black;
+}
+
+div.jp-interface {
+  /*background: @white-light url("../../../modules/jquery-jplayer-midnight-black/jplayer.midnight.black.interface.png") repeat-x;*/
+  background-color: @white-light;
+}
+
+/***********************************************
+        Other
+***********************************************/
+.jscroll-next {
+  border-color: #ccc;
+  background-color: #eee;
+  color: #000;
+}
+
+.followbtn {
+  background-color: #167fc2;
+}
+
+.missing_album {
+  color: #bbb !important;
+}
+
+.user_online {
+  background: #0f0;
+}
+
+.user_offline {
+  background: #7f0000;
+}
+
+.user_disabled {
+  background: #ccc;
+}
+
+.list-header-navmenu-border {
+  border-color: #fff;
+}
+
+span.item-count,
+span.query-count {
+  color: #000;
+}
+
+a.option-list:hover {
+  border-color: #fff;
+}
+
+.editdialogstyle.ui-dialog {
+  background-image: url("../../../images/background.light.png") !important;
+}
+
+#tabs li a {
+  color: #1990db;
+}
+
+#tabs li a:hover {
+  color: #52aae4;
+}
+
+#tabs li.tab_active a {
+  color: #000;
+}

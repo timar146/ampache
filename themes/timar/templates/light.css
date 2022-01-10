@@ -1,0 +1,418 @@
+/************************
+ * Colors
+ ************************/
+/***********************************************
+           General style rules
+***********************************************/
+body {
+  color: #404041;
+  background-color: #FFFFFF;
+}
+.error {
+  color: #D62828;
+}
+a {
+  color: #404041;
+}
+a > svg,
+a > img {
+  color: #F77F00;
+}
+a:hover {
+  color: #003049;
+}
+a:hover > svg,
+a:hover > img {
+  color: #F77F0095;
+}
+hr {
+  border-top-color: red;
+}
+input[type="password"],
+input[type="text"],
+select {
+  border-color: #6D6E70;
+  background-color: #FFFFFF;
+  color: #404041;
+}
+input[type="password"]:hover,
+input[type="text"]:hover,
+select:hover,
+input[type="password"]:focus,
+input[type="text"]:focus,
+select:focus {
+  border-color: #F77F00;
+}
+input[type="button"],
+input[type="submit"] {
+  color: #FFFFFF;
+  background-color: #F77F00;
+}
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:focus,
+input[type="submit"]:focus {
+  background-color: #F77F0095;
+}
+input[type="button"]:focus:active,
+input[type="submit"]:focus:active {
+  background-color: #F77F0085;
+}
+input[type=checkbox] {
+  background: #FFFFFF;
+  border-color: #6D6E70;
+}
+input[type=checkbox]:checked {
+  background: #FFFFFF;
+}
+input[type=checkbox]:checked:before {
+  color: #F77F00;
+}
+input[type=checkbox]:hover,
+input[type=checkbox]:focus {
+  border-color: #F77F00;
+}
+.edit_dialog_content input[type="text"],
+.edit_dialog_content select {
+  color: red;
+}
+.editdialogstyle.ui-dialog .ui-dialog-titlebar {
+  color: red;
+}
+.alert-danger {
+  color: #D62828;
+}
+div#autoupdate > span {
+  color: #D62828;
+}
+/***********************************************
+           Main
+***********************************************/
+#ajax-loading {
+  color: transparent;
+  background-image: url(../images/ajax-loader-light.gif);
+}
+/***********************************************
+           Header
+***********************************************/
+#header {
+  background-color: #FCBF49;
+}
+/***********************************************
+           Login
+***********************************************/
+#loginPage {
+  background-color: #F7F8F8;
+}
+#loginPage #headerlogo,
+#registerPage #headerlogo {
+  background-image: url("../images/ampache-light.png");
+}
+#loginPage #loginbox {
+  color: #404041;
+}
+#loginPage span.error {
+  background: #FCBF49;
+  color: #6D6E70;
+}
+/***********************************************
+           Sidebar
+***********************************************/
+#sidebar {
+  color: #404041;
+}
+#sidebar-header {
+  background-color: #E4E4E4;
+}
+#sidebar-header:hover {
+  color: #6D6E70;
+}
+#sidebar-content,
+#sidebar-content-light,
+#sidebar-light {
+  background-color: #E4E4E4;
+}
+/* Tabs content */
+#sidebar-page {
+  background-color: #E4E4E4;
+}
+#sidebar-tabs .sb2 li h4 {
+  color: #111;
+  background-color: #e3e3e3;
+  border-color: #B0B0B0;
+}
+#sidebar-tabs .sb2 li ul li a,
+#sidebar-light a {
+  color: #404041;
+}
+#sidebar-tabs .sb2 li ul li a:hover,
+ul#sidebar-light li:hover {
+  background-color: #F7F8F8;
+}
+#sidebar-tabs .sb2 #browse_filters #multi_alpha_filter {
+  border-color: #bbb;
+}
+/***********************************************
+           Rightbar
+***********************************************/
+#rightbar {
+  border-color: #404041;
+  background-color: #FFFFFF;
+}
+/***********************************************
+           Content
+***********************************************/
+#content {
+  background-color: #FFFFFF;
+  color: #404041;
+}
+#content > #guts > table.tabledata tr#browse_location,
+#content > #guts > #browse_header > table.tabledata tr#browse_location {
+  background: transparent;
+}
+#content > #guts > table.tabledata tr#browse_location td,
+#content > #guts > #browse_header > table.tabledata tr#browse_location td {
+  border-color: #F77F00;
+  color: #F77F00;
+}
+#content > #guts > table.tabledata tr#browse_location a,
+#content > #guts > #browse_header > table.tabledata tr#browse_location a {
+  color: #FFFFFF;
+}
+#content > #guts > table.tabledata tr#browse_location a:hover,
+#content > #guts > #browse_header > table.tabledata tr#browse_location a:hover {
+  border-color: #F77F00;
+  color: #F77F00;
+  text-decoration: none;
+}
+.list-header,
+.list-header a {
+  color: #000;
+}
+.list-header a:hover,
+.list-header a:focus {
+  color: #52aae4;
+}
+span.page-nb {
+  color: red;
+}
+#catalog_type_fields table.tabledata a {
+  color: red;
+}
+table.tabledata thead .th-top,
+table.tabledata tfoot .th-bottom {
+  background-color: #FFFFFF;
+}
+table.tabledata:not(.disablegv) tbody tr:nth-child(odd) {
+  background-color: #F7F8F8;
+}
+table.tabledata:not(.disablegv) tbody tr:nth-child(odd) td[colspan] {
+  background-color: #FFFFFF;
+}
+table.disablegv tr:hover {
+  background-color: #F7F8F8;
+}
+/***********************************************
+           Content (info-box)
+***********************************************/
+#content .missing {
+  background-image: url("../images/missing.png");
+}
+/***********************************************
+    Content (now playing)
+***********************************************/
+#now_playing .cel_albumart img {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+}
+#now_playing .cel_lyrics a:hover {
+  color: #0099cc;
+}
+/***********************************************
+    Content (Tag cloud)
+***********************************************/
+span.fatalerror {
+  color: #c60;
+}
+.box-content #tag_filter .tag_button {
+  color: #fff;
+}
+.box-content #tag_filter .tag_button span:hover {
+  background-color: #c85a00;
+  background-image: -moz-linear-gradient(top, #1473af, #027ecc);
+  background-image: -ms-linear-gradient(top, #1473af, #027ecc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1473af), to(#027ecc));
+  background-image: -webkit-linear-gradient(top, #1473af, #027ecc);
+  background-image: -o-linear-gradient(top, #1473af, #027ecc);
+  background-image: linear-gradient(top, #1473af, #027ecc);
+}
+/***********************************************
+    Content (information-actions)
+***********************************************/
+.item_art .item_art_play .item_art_play_icon {
+  background-color: #FCBF49;
+}
+.item_art .item_art_play .item_art_play_icon:hover {
+  background-color: #F77F00;
+}
+.item_art .item_art_actions {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.item_art {
+  border-color: #6D6E70;
+  background-color: inherit;
+}
+.item_art:hover {
+  border-color: #F77F00;
+}
+.item_art:hover img {
+  opacity: 0.7;
+}
+/************************************************/
+/*        Styles for user flags                 */
+/************************************************/
+.userflag a.userflag_true {
+  background: url(../../../images/icon_flag.png) left top;
+}
+.userflag a:hover.userflag_true {
+  background: url(../../../images/icon_flag_off.png) left top;
+}
+.userflag a.userflag_false {
+  background: url(../../../images/icon_flag_off.png) left top;
+}
+.userflag a:hover.userflag_false {
+  background: url(../../../images/icon_flag.png) left top;
+}
+/***********************************************
+        Content (Track view)
+***********************************************/
+dl.media_details dt {
+  color: #c60;
+}
+/***********************************************
+        Footer
+***********************************************/
+#footer a:hover {
+  color: #09c;
+}
+#ampache_link {
+  color: #000;
+}
+/***********************************************
+        Web Player
+***********************************************/
+a.jp-play,
+a.jp-play:hover,
+a.jp-pause,
+a.jp-pause:hover,
+a.jp-stop,
+a.jp-stop:hover,
+a.jp-previous,
+a.jp-previous:hover,
+a.jp-next,
+a.jp-next:hover,
+div.jp-seek-bar,
+div.jp-play-bar,
+a.jp-mute,
+a.jp-mute:hover,
+a.jp-unmute,
+a.jp-unmute:hover,
+a.jp-volume-max,
+a.jp-volume-max:hover,
+div.jp-volume-bar,
+div.jp-audio,
+div.jp-volume-bar,
+div.jp-volume-bar-value,
+a.jp-full-screen,
+a.jp-full-screen:hover,
+a.jp-restore-screen,
+a.jp-restore-screen:hover,
+a.jp-repeat,
+a.jp-repeat:hover,
+a.jp-repeat-off,
+a.jp-repeat-off:hover,
+a.jp-shuffle,
+a.jp-shuffle:hover,
+a.jp-shuffle-off,
+a.jp-shuffle-off:hover {
+  background-image: url("../images/jplayer.timar146-orange.png") !important;
+}
+div.jp-audio,
+div.jp-audio-stream,
+div.jp-video {
+  color: #000;
+  border: 1px solid #F7F8F8;
+}
+div.jp-video div.jp-interface {
+  border-top: 1px solid #F7F8F8;
+}
+div.jp-title,
+div.jp-playlist {
+  background-color: #C4C4C4;
+  border-top: 1px solid #F7F8F8;
+}
+.jp-no-solution {
+  background-color: #C4C4C4;
+  background-image: none;
+  border-top: 1px solid #F7F8F8;
+}
+#webplayer {
+  background-color: #F7F8F8 !important;
+}
+div.playing_title a {
+  color: #404041;
+}
+div.playing_artist a {
+  color: #404041;
+}
+div.jp-interface {
+  /*background: @white-light url("../../../modules/jquery-jplayer-midnight-black/jplayer.midnight.black.interface.png") repeat-x;*/
+  background-color: #F7F8F8;
+}
+/***********************************************
+        Other
+***********************************************/
+.jscroll-next {
+  border-color: #ccc;
+  background-color: #eee;
+  color: #000;
+}
+.followbtn {
+  background-color: #167fc2;
+}
+.missing_album {
+  color: #bbb !important;
+}
+.user_online {
+  background: #0f0;
+}
+.user_offline {
+  background: #7f0000;
+}
+.user_disabled {
+  background: #ccc;
+}
+.list-header-navmenu-border {
+  border-color: #fff;
+}
+span.item-count,
+span.query-count {
+  color: #000;
+}
+a.option-list:hover {
+  border-color: #fff;
+}
+.editdialogstyle.ui-dialog {
+  background-image: url("../../../images/background.light.png") !important;
+}
+#tabs li a {
+  color: #1990db;
+}
+#tabs li a:hover {
+  color: #52aae4;
+}
+#tabs li.tab_active a {
+  color: #000;
+}
+/*# sourceMappingURL=light.css.map */
