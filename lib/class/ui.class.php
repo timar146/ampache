@@ -306,6 +306,7 @@ class UI
             $svgicon->addAttribute('class', $class_attrib);
 
             $tag = explode("\n", $svgicon->asXML(), 2)[1];
+            $tag = str_replace("\n", "", $tag); // Fix for eval JS error on multilines tag
         } else {
             // fall back to png
             $tag = '<img src="' . $icon_url . '" ';
