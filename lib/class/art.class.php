@@ -1438,11 +1438,11 @@ class Art extends database_object
 
         // Array of valid extensions
         $image_extensions = array(
+            'jpg',
+            'jpeg',
             'bmp',
             'gif',
             'jp2',
-            'jpeg',
-            'jpg',
             'png'
         );
 
@@ -1493,6 +1493,34 @@ class Art extends database_object
 
             $processed[$dir] = true;
 
+            // Get file that perfect match $dir basename
+            foreach ($image_extensions as $extension) {
+                $full_filename = $dir . '/' . basename($dir) . "." . $extension;
+                if (file_exists($full_filename)) {
+                    // Make sure it's got something in it
+                    if (!Core::get_filesize($full_filename)) {
+                        debug_event('art.class', "gather_folder: Empty file, rejecting" . $full_filename, 5);
+                        continue;
+                    }
+                    // Regularize for mime type
+                    if ($extension == 'jpg') {
+                        $extension = 'jpeg';
+                    }
+
+                    // Take an md5sum so we don't show duplicate files.
+                    $index = md5($full_filename);
+
+                    debug_event('art.class', "gather_folder: Found preferred image file: $full_filename", 5);
+                    $preferred[$index] = array(
+                        'file' => $full_filename,
+                        'mime' => 'image/' . $extension,
+                        'title' => 'Folder'
+                    );
+                    closedir($handle);
+                    break 2;
+                }
+            }
+
             // Recurse through this dir and create the files array
             while (false !== ($file = readdir($handle))) {
                 $extension = pathinfo($file);
@@ -1530,6 +1558,20 @@ class Art extends database_object
                     );
                     break;
                 }
+
+                // Prefer cover than back or inlay
+                $patternCover = '/(cover\.)|(front\.)/i';
+                if (preg_match($patternCover, $file) || preg_match($patternCover, pathinfo($file, PATHINFO_FILENAME))) {
+                    // We found the preferred filename and so we're done.
+                    debug_event('art.class', "gather_folder: Found preferred image file: $file", 5);
+                    $preferred[$index] = array(
+                        'file' => $full_filename,
+                        'mime' => 'image/' . $extension,
+                        'title' => 'Folder'
+                    );
+                    break;
+                }
+
                 if ($this->type !== 'artist') {
                     debug_event('art.class', "gather_folder: Found image file: $file", 5);
                     $results[$index] = array(
